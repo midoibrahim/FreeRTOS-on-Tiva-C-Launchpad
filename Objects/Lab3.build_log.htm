@@ -1,0 +1,116 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.34.0.0
+Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Ali Essam, ASU, LIC=VGXG8-3AE1L-QDNKD-8TFWY-JTC58-HU3FJ
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.34.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.16
+Assembler:       Armasm.exe V6.16
+Linker/Locator:  ArmLink.exe V6.16
+Library Manager: ArmAr.exe V6.16
+Hex Converter:   FromElf.exe V6.16
+CPU DLL:         SARMCM3.DLL V5.34.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      lmidk-agdi.dll V???
+Dialog DLL:      TCM.DLL V1.48.0.0
+ 
+<h2>Project:</h2>
+C:\Users\DUKU\Downloads\lab3\Lab3.uvprojx
+Project File Date:  10/31/2021
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+main.c(19): warning: function 'Red_Task' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+void Red_Task(){
+               ^
+main.c(25): warning: function 'Blue_Task' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+void Blue_Task(){
+                ^
+main.c(35): warning: incompatible function pointer types passing 'void (void)' to parameter of type 'TaskFunction_t' (aka 'void (*)(void *)') [-Wincompatible-function-pointer-types]
+        xTaskCreate(Red_Task,"BlinkyRed",100,NULL, 1,NULL);
+                    ^~~~~~~~
+C:/Users/DUKU/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.4.3/Source/include\task.h(340): note: passing argument to parameter 'pxTaskCode' here
+    BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
+                                           ^
+main.c(36): warning: incompatible function pointer types passing 'void (void)' to parameter of type 'TaskFunction_t' (aka 'void (*)(void *)') [-Wincompatible-function-pointer-types]
+        xTaskCreate(Blue_Task,"BlinkyBlue",100,NULL, 1,NULL);
+                    ^~~~~~~~~
+C:/Users/DUKU/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.4.3/Source/include\task.h(340): note: passing argument to parameter 'pxTaskCode' here
+    BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
+                                           ^
+main.c(39): warning: no newline at end of file [-Wnewline-eof]
+}
+ ^
+5 warnings generated.
+compiling main.c...
+linking...
+Program Size: Code=10476 RO-data=748 RW-data=8 ZI-data=4992  
+".\Objects\Lab3.axf" - 0 Error(s), 5 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.8.0.pack
+                ARM.CMSIS.5.8.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.5.0
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS-FreeRTOS.10.4.3.pack
+                ARM.CMSIS-FreeRTOS.10.4.3
+                Bundle of FreeRTOS for Cortex-M and Cortex-A
+   * Component: Config Variant: FreeRTOS Version: 10.4.3
+   * Component: Core Variant: Cortex-M Version: 10.4.3
+   * Component: Heap Variant: Heap_1 Version: 10.4.3
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.TM4C_DFP.1.1.0.pack
+                Keil.TM4C_DFP.1.1.0
+                Texas Instruments Tiva C Series Device Support and Examples
+   * Component: Startup Version: 1.0.1
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\RTOS
+  .\RTE\_Target_1
+  C:\Users\DUKU\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.3\CMSIS\RTOS2\FreeRTOS\Include
+  C:\Users\DUKU\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.3\Source\include
+  C:\Users\DUKU\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.3\Source\portable\GCC\ARM_CM4F
+  C:\Users\DUKU\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include
+  C:\Users\DUKU\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM.FreeRTOS::RTOS:Config:FreeRTOS:10.4.3
+      Include file:  Config\ARMCM\FreeRTOSConfig.h
+
+   * Component: ARM.FreeRTOS::RTOS:Core:Cortex-M:10.4.3
+      Include file:  Source\include\FreeRTOS.h
+      Source file:   Source\tasks.c
+      Source file:   Source\list.c
+      Source file:   Source\portable\GCC\ARM_CM4F\port.c
+      Include file:  Source\include\queue.h
+      Include file:  Source\include\task.h
+      Include file:  Source\include\semphr.h
+      Source file:   Source\queue.c
+      Source file:   CMSIS\RTOS2\FreeRTOS\Source\freertos_evr.c
+
+   * Component: ARM.FreeRTOS::RTOS:Heap:Heap_1:10.4.3
+      Source file:   Source\portable\MemMang\heap_1.c
+
+   * Component: ARM::CMSIS:CORE:5.5.0
+
+   * Component: Keil::Device:Startup:1.0.1
+      Source file:   Device\Source\ARM\startup_TM4C123.s
+      Include file:  Device\Include\TM4C123\TM4C123.h
+      Source file:   Device\Source\system_TM4C123.c
+Build Time Elapsed:  00:00:00
+</pre>
+</body>
+</html>
